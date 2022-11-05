@@ -33,3 +33,5 @@ class Business extends React.Component {
 }
 
 export default Business;
+
+// Note for future refactoring: I followed the project guidelines, but I think it would be better to store this.props.business in its own variable, so that this component is less repetitious.

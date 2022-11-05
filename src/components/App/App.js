@@ -30,3 +30,5 @@ class App extends React.Component {
 }
 
 export default App;
+
+// Note for future refactoring: I followed the project guidelines, but I find this approach with the businesses array clunky and inelegant. I'll identify a better approach when I start integrating with the Yelp API.
