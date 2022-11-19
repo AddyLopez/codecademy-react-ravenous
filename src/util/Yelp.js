@@ -6,19 +6,17 @@ const yelp = {
     const requestParams = `search?term=${term}&location=${location}&sort_by=${sortBy}`;
     const urlToFetch = `${apiUrl}${businessesEndpoint}${requestParams}`;
     const bypassCORSRestriction = "https://cors-anywhere.herokuapp.com/";
-    const authHeaders = {
+    return fetch(`${bypassCORSRestriction}${urlToFetch}`, {
       headers: {
         Authorization: `Bearer ${apiKey}`,
       },
-    };
-    return fetch(`${bypassCORSRestriction}${urlToFetch}`, `${authHeaders}`)
+    })
       .then((response) => {
-        console.log(response.json);
         return response.json();
       })
       .then((jsonResponse) => {
         if (jsonResponse.businesses) {
-          return jsonResponse.business.map((business) => {
+          return jsonResponse.businesses.map((business) => {
             console.log(business);
             return {
               id: business.id,
