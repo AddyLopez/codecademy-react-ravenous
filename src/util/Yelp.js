@@ -1,7 +1,7 @@
 const apiKey = "";
 const apiUrl = "https://api.yelp.com/v3";
 const yelp = {
-  searchYelp(term, location, sortBy) {
+  search(term, location, sortBy) {
     const businessesEndpoint = "/businesses/";
     const requestParams = `search?term=${term}&location=${location}&sort_by=${sortBy}`;
     const urlToFetch = `${apiUrl}${businessesEndpoint}${requestParams}`;
